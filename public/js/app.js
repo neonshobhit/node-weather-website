@@ -9,7 +9,7 @@ const messageTwo = document.querySelector('#message-2')
 
 
 function fetchingForecast(address) {
-    fetch('http://localhost:3000/weather?address=' + address).then((response) => {
+    fetch('/weather?address=' + address).then((response) => {
     response.json().then((data) => {
         if (data.error) {
             console.log(data.error)
