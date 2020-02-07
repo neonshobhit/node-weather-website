@@ -12,11 +12,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if( body.error) {
             callback('Wrong coordinates', undefined)
         } else {
-            callback(undefined, {
-                summary: body.hourly.data[0].summary,
-                temperature: body.currently.temperature,
-                precipProbability: body.currently.precipProbability,
-            })
+            callback(undefined, body.hourly.data[0].summary + 'It\'s currently ' + body.currently.temperature + 'and there\'s' + body.currently.precipProbability +'% chance of rain.')
         }
     })
 
